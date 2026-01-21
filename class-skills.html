@@ -3,215 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【スタレゾ】クラス別・型別 おすすめクラススキル一覧 (2026/1時点)</title>
+    <title>スタレゾ攻略アプリ - クラス・型別 おすすめクラススキル</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 20px; background: #f4f4f4; color: #333; }
-        h1, h2, h3 { color: #2c3e50; }
-        h1 { text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; }
-        .note { background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 8px; margin: 20px 0; }
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background: #3498db; color: white; font-weight: bold; }
-        tr:hover { background: #f8f9fa; }
-        .priority-ss { background: #e74c3c; color: white; font-weight: bold; text-align: center; }
-        .priority-s { background: #f39c12; color: white; font-weight: bold; text-align: center; }
-        .priority-a { background: #27ae60; color: white; font-weight: bold; text-align: center; }
-        .priority-b { background: #3498db; color: white; font-weight: bold; text-align: center; }
-        strong { color: #e74c3c; }
-        .tier-table { font-size: 0.9em; }
-        footer { text-align: center; margin-top: 40px; padding: 20px; background: #34495e; color: white; border-radius: 8px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+            color: #e0e0ff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd70080;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 30px 0 10px;
+            font-size: 2.2em;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin: 10px 0 30px;
+            color: #00ccff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .back-home:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .note {
+            background: rgba(255, 215, 0, 0.12);
+            border-left: 4px solid #ffd700;
+            padding: 12px 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+            color: #ffeb99;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.98em;
+        }
+
+        th, td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        th {
+            background: rgba(255, 215, 0, 0.18);
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .priority-ss { background: #c62828aa; font-weight: bold; text-align: center; }
+        .priority-s  { background: #f57c00aa; font-weight: bold; text-align: center; }
+        .priority-a  { background: #2e7d32aa; font-weight: bold; text-align: center; }
+        .priority-b  { background: #1565c0aa; font-weight: bold; text-align: center; }
+
+        .skill-name strong {
+            color: #ffeb3b;
+        }
+
+        @media (max-width: 720px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                display: none;
+            }
+            tr {
+                margin-bottom: 18px;
+                border: 1px solid rgba(255,255,255,0.1);
+                border-radius: 8px;
+            }
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+            td:before {
+                position: absolute;
+                top: 12px;
+                left: 14px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-label);
+                text-align: left;
+                color: #aaa;
+                font-weight: bold;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>ブループロトコル：スターレゾナンス<br>クラス別・型別 おすすめクラススキル早見表</h1>
-    <div class="note">
-        <strong>※2026年1月時点の主流メタ（GameWith/gamerch/blueprotocol-fan.com参考）<grok-card data-id="72144c" data-type="citation_card" ></grok-card><grok-card data-id="f7c5c7" data-type="citation_card" ></grok-card><grok-card data-id="effa7a" data-type="citation_card" ></grok-card></strong><br>
-        ※パッチ/装備で変動大。型特化スキル優先。<br>
-        ※<strong>太字=超優先（ほぼ確定枠）</strong> | 優先度: SS> S> A> B
+
+<div class="container">
+
+    <h1>🗡️ クラス・型別 おすすめクラススキル早見表</h1>
+
+    <a href="index.html" class="back-home">← ホームに戻る</a>
+
+    <div class="section">
+        <div class="note">
+            ※ 2026年1月時点の主流メタです（パッチで変更の可能性大）<br>
+            ※ <strong>太字</strong> = 超優先・ほぼ確定で取るスキル<br>
+            ※ 優先度：SS → S → A → B の順
+        </div>
     </div>
 
-    <h2>最強Tier表（総合/ロール別参考）</h2>
-    <table class="tier-table">
-        <thead><tr><th>SS</th><th>S</th><th>A</th></tr></thead>
-        <tbody>
-            <tr><td>ストームブレイド雷刃型<br>ビートパフォーマー狂音型</td><td>ヴァーダントオラクル森癒型 / ビートパフォーマー響奏型 / ヘヴィガーディアン剛守型 / ゲイルランサー乱風型 / ストームブレイド月影型</td><td>その他全型</td></tr>
-        </tbody>
-    </table><grok-card data-id="f9cc39" data-type="citation_card" ></grok-card>
+    <!-- ここから各クラス -->
 
-    <h2>ストームブレイド（近接DPS）</h2>
-    <h3>雷刃型（瞬間火力特化）</h3>
-    <table>
-        <thead><tr><th>スキル名</th><th>優先度</th><th>役割</th></tr></thead>
-        <tbody>
-            <tr><td><strong>雷刃抜刀</strong></td><td class="priority-ss">SS</td><td>特殊攻撃/雷印消費主力</td></tr>
-            <tr><td><strong>一閃</strong></td><td class="priority-ss">SS</td><td>雷印消費/最高火力</td></tr>
-            <tr><td><strong>奥義・破刃連斬</strong></td><td class="priority-s">S</td><td>究極/バースト</td></tr>
-            <tr><td>彼岸 / 飛雷 / 心眼</td><td class="priority-a">A</td><td>雷印蓄積/パリィ</td></tr>
-        </tbody>
-    </table><grok-card data-id="cca112" data-type="citation_card" ></grok-card>
+    <div class="section">
+        <h2>ストームブレイド</h2>
 
-    <h3>月影型（持続ラッシュ）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>迅雷連斬</strong></td><td class="priority-ss">SS</td><td>月刃蓄積/主力</td></tr>
-            <tr><td><strong>奥義・破刃連斬</strong></td><td class="priority-s">S</td><td>究極</td></tr>
-            <tr><td>月影殺 / 旋廻鎌 / 千雷</td><td class="priority-a">A</td><td>特殊/持続ダメ/バフ</td></tr>
-        </tbody>
-    </table>
+        <h3>雷刃型（瞬間火力特化）</h3>
+        <table>
+            <tr><th>スキル名</th><th>優先度</th><th>主な役割</th></tr>
+            <tr><td class="skill-name"><strong>雷刃抜刀</strong></td><td class="priority-ss">SS</td><td>特殊攻撃 / 雷印消費主力</td></tr>
+            <tr><td class="skill-name"><strong>一閃</strong></td><td class="priority-ss">SS</td><td>雷印消費 / 最高火力</td></tr>
+            <tr><td class="skill-name"><strong>奥義・破刃連斬</strong></td><td class="priority-s">S</td><td>究極 / バースト</td></tr>
+            <tr><td>彼岸 / 飛雷 / 心眼</td><td class="priority-a">A</td><td>雷印蓄積 / パリィ</td></tr>
+        </table>
 
-    <h2>ゲイルランサー（近接DPS）</h2>
-    <h3>烈風型（テクニカル勇心管理）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>烈風撃</strong></td><td class="priority-ss">SS</td><td>勇心消費主力</td></tr>
-            <tr><td><strong>風陣・豪嵐破</strong> / <strong>勇心風環</strong></td><td class="priority-s">S</td><td>究極/バフ持続</td></tr>
-            <tr><td>螺旋撃 / 風姿卓絶</td><td class="priority-a">A</td><td>消費/蓄積</td></tr>
-        </tbody>
-    </table><grok-card data-id="b140e4" data-type="citation_card" ></grok-card>
-
-    <h3>乱風型（スピード鋭利消費）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>飛燕乱</strong> / <strong>鋭利衝</strong></td><td class="priority-ss">SS</td><td>蓄積/消費主力</td></tr>
-            <tr><td><strong>風陣・豪嵐破</strong></td><td class="priority-s">S</td><td>究極</td></tr>
-            <tr><td>風姿卓絶 / 刹那 / 飛鳥投</td><td class="priority-a">A</td><td>勇心/回避</td></tr>
-        </tbody>
-    </table>
-
-    <h2>フロストメイジ（遠距離DPS）</h2>
-    <h3>氷牙型（ラッシュ制御）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>メテオストーム</strong></td><td class="priority-ss">SS</td><td>主力ラッシュ</td></tr>
-            <tr><td><strong>フロストファング</strong></td><td class="priority-s">S</td><td>特殊/玄氷効率</td></tr>
-            <tr><td>ウォータースフィア / ブリザード / パーマフロスト</td><td class="priority-a">A</td><td>蓄積/範囲</td></tr>
-        </tbody>
-    </table><grok-card data-id="476775" data-type="citation_card" ></grok-card>
-
-    <h3>霜天型（AoEパワー）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>フローズンストーム</strong></td><td class="priority-ss">SS</td><td>詠唱大ダメ</td></tr>
-            <tr><td><strong>メイルストローム</strong> / パーマフロスト</td><td class="priority-s">S</td><td>集敵/速度バフ</td></tr>
-            <tr><td>タイドプール</td><td class="priority-a">A</td><td>持続/連携</td></tr>
-        </tbody>
-    </table><grok-card data-id="96f43a" data-type="citation_card" ></grok-card>
-
-    <h2>ディバインアーチャー（遠距離DPS）</h2>
-    <h3>狼弓型（召喚安全）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>ハウリングボルト</strong> / <strong>ワイルドコール</strong></td><td class="priority-ss">SS</td><td>特殊/狼召喚</td></tr>
-            <tr><td><strong>メンタルフォーカス</strong></td><td class="priority-s">S</td><td>バフ/閃心強化</td></tr>
-            <tr><td>レイジショット / アローレイン</td><td class="priority-a">A</td><td>火力/蓄積</td></tr>
-        </tbody>
-    </table><grok-card data-id="86f8d7" data-type="citation_card" ></grok-card>
-
-    <h3>鷹弓型（会心移動）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>ストライクボルト</strong></td><td class="priority-ss">SS</td><td>特殊/鷹協力</td></tr>
-            <tr><td><strong>エナジーショット</strong> / <strong>メンタルフォーカス</strong></td><td class="priority-s">S</td><td>主力/バフ</td></tr>
-            <tr><td>アローレイン / ブラストショット</td><td class="priority-a">A</td><td>蓄積/単発</td></tr>
-        </tbody>
-    </table>
-
-    <h2>ヘヴィガーディアン（タンク）</h2>
-    <h3>剛身型（シールド耐久）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>砕刃の猛撃</strong> / <strong>憤怒の剛撃</strong></td><td class="priority-ss">SS</td><td>特殊/シールド主力</td></tr>
-            <tr><td><strong>岩堅・崩裂の廻刃</strong></td><td class="priority-s">S</td><td>究極/挑発</td></tr>
-            <tr><td>巨岩躯体 / 砕星衝 / 砂塵外套</td><td class="priority-a">A</td><td>挑発/蓄積</td></tr>
-        </tbody>
-    </table><grok-card data-id="fa3005" data-type="citation_card" ></grok-card>
-
-    <h3>剛守型（レジスト火力）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>護刃の衝撃</strong> / <strong>岩塊撃</strong></td><td class="priority-ss">SS</td><td>特殊/軽減主力</td></tr>
-            <tr><td><strong>岩堅・崩裂の廻刃</strong></td><td class="priority-s">S</td><td>究極</td></tr>
-            <tr><td>砂岩握 / 勇壮砦壁</td><td class="priority-a">A</td><td>集敵/挑発</td></tr>
-        </tbody>
-    </table>
-
-    <h2>シールドファイター（タンク）</h2>
-    <h3>光砕型（防御回復）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>ブレイヴバッシュ</strong> / <strong>ジャッジメント</strong></td><td class="priority-ss">SS</td><td>特殊/回復</td></tr>
-            <tr><td>ホーリーガード / レコニング</td><td class="priority-a">A</td><td>守護/火力</td></tr>
-        </tbody>
-    </table><grok-card data-id="54c8f2" data-type="citation_card" ></grok-card>
-
-    <h3>光盾型（持続安定）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>グローイングガード</strong> / <strong>ジャッジメント</strong></td><td class="priority-ss">SS</td><td>特殊/HP強化</td></tr>
-            <tr><td>セイクリッドオース / コンクエスト</td><td class="priority-a">A</td><td>持続ダメ/回復</td></tr>
-        </tbody>
-    </table>
-
-    <h2>ヴァーダントオラクル（ヒーラー）</h2>
-    <h3>威咲型（回復+火力）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>ワイルドブルーム</strong> / <strong>ブルームヒール</strong></td><td class="priority-ss">SS</td><td>特殊/究極回復</td></tr>
-            <tr><td><strong>ネイチャーワード</strong></td><td class="priority-s">S</td><td>バリア</td></tr>
-            <tr><td>リジェネイトパルス / フェラルシード</td><td class="priority-a">A</td><td>解除/エネルギー</td></tr>
-        </tbody>
-    </table><grok-card data-id="4cc0da" data-type="citation_card" ></grok-card>
-
-    <h3>森癒型（純ヒール）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>ブルームヒール</strong> / <strong>リジェネレーション</strong></td><td class="priority-ss">SS</td><td>究極/持続回復</td></tr>
-            <tr><td><strong>バイタルブルーム</strong></td><td class="priority-s">S</td><td>特殊即時</td></tr>
-            <tr><td>グローヴウィッシュ / ファストグロウス</td><td class="priority-a">A</td><td>単体/CD短縮</td></tr>
-        </tbody>
-    </table>
-
-    <h2>ビートパフォーマー（ヒーラー）</h2>
-    <h3>狂音型（攻撃ヒール）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>ハードディストーション</strong> / <strong>フレイムラプソディー</strong></td><td class="priority-ss">SS</td><td>特殊/即時回復</td></tr>
-            <tr><td><strong>響宴・バッドネスステージ</strong></td><td class="priority-s">S</td><td>究極</td></tr>
-            <tr><td>ハーモニックアンセム / ブレイブメロディー</td><td class="priority-a">A</td><td>範囲/持続</td></tr>
-        </tbody>
-    </table><grok-card data-id="9c2855" data-type="citation_card" ></grok-card>
-
-    <h3>響奏型（バフヒール）</h3>
-    <table>
-        <tbody>
-            <tr><td><strong>コーラスヒーリング</strong> / <strong>サージクインテット</strong></td><td class="priority-ss">SS</td><td>特殊/全体回復</td></tr>
-            <tr><td><strong>響宴・バッドネスステージ</strong></td><td class="priority-s">S</td><td>究極</td></tr>
-            <tr><td>ヒーリングメロディー / アンコール</td><td class="priority-a">A</td><td>設置/バフ</td></tr>
-        </tbody>
-    </table>
-
-    <div class="note">
-        <h3>超簡易覚え方（最優先枠）</h3>
-        <pre>雷刃: 雷刃抜刀・一閃
-月影: 迅雷連斬
-烈風: 烈風撃・勇心風環
-乱風: 飛燕乱・鋭利衝
-氷牙: メテオストーム
-霜天: フローズンストーム
-狼弓: ハウリング・ワイルドコール
-鷹弓: ストライクボルト
-剛身: 砕刃猛撃・憤怒剛撃
-剛守: 護刃衝撃・岩塊撃
-光砕: ブレイヴバッシュ
-光盾: グローイングガード
-威咲: ワイルドブルーム
-森癒: リジェネレーション
-狂音: ハードディストーション
-響奏: サージクインテット</pre>
+        <h3>月影型（持続ラッシュ）</h3>
+        <table>
+            <tr><th>スキル名</th><th>優先度</th><th>主な役割</th></tr>
+            <tr><td class="skill-name"><strong>迅雷連斬</strong></td><td class="priority-ss">SS</td><td>月刃蓄積 / メイン火力</td></tr>
+            <tr><td class="skill-name"><strong>奥義・破刃連斬</strong></td><td class="priority-s">S</td><td>究極</td></tr>
+        </table>
     </div>
 
-    <footer>
-        GitHubサイト用HTMLスニペット | 詳細はGameWith等攻略サイト確認を！✨
-    </footer>
+    <!-- 他のクラスも同じように section ごとに追加していく -->
+
+    <!-- 例：ゲイルランサー -->
+    <div class="section">
+        <h2>ゲイルランサー</h2>
+
+        <h3>烈風型</h3>
+        <table>
+            <tr><th>スキル名</th><th>優先度</th><th>主な役割</th></tr>
+            <tr><td class="skill-name"><strong>烈風撃</strong></td><td class="priority-ss">SS</td><td>勇心消費主力</td></tr>
+            <tr><td class="skill-name"><strong>勇心風環</strong></td><td class="priority-s">S</td><td>バフ持続</td></tr>
+        </table>
+
+        <h3>乱風型</h3>
+        <table>
+            <tr><th>スキル名</th><th>優先度</th><th>主な役割</th></tr>
+            <tr><td class="skill-name"><strong>飛燕乱</strong></td><td class="priority-ss">SS</td><td>蓄積・消費</td></tr>
+        </table>
+    </div>
+
+    <!-- 残りのクラスも同じ要領で追加してください -->
+
+    <div class="section" style="text-align:center; margin-top:60px; opacity:0.7;">
+        <p>※ 他のクラスも順次追加予定です！<br>
+        欲しいクラスの詳細が欲しい場合は教えてください♪</p>
+    </div>
+
+</div>
+
 </body>
 </html>
