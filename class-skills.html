@@ -251,50 +251,240 @@
             </table>
         </section>
 
-        <!-- 以下、他のクラスも同様に id を付けてください -->
         <!-- フロストメイジ -->
-        <section class="section" id="frost">
-            <h2>❄️ フロストメイジ</h2>
-            <h3>氷牙型（ラッシュ制御）</h3>
-            <div class="build-summary">
-                <strong>基本:</strong> フロストファング / メテオストーム　｜　<strong>究極:</strong> アイスバースト　｜　<strong>MS:</strong> ブリザード / パーマフロスト / ウォータースフィア / 氷結領域
-            </div>
-            <!-- テーブルは省略してあります。必要に応じて前のレスからコピーしてください -->
-            <h3>霜天型（AoEパワー）</h3>
-            <!-- ... -->
-        </section>
+<section class="section" id="frost">
+    <h2>❄️ フロストメイジ</h2>
 
-        <!-- ディバインアーチャー -->
-        <section class="section" id="divine">
-            <h2>🏹 ディバインアーチャー</h2>
-            <!-- ... -->
-        </section>
+    <h3>氷牙型（ラッシュ制御・近中距離特化）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> フロストファング / メテオストーム　｜　<strong>究極:</strong> アイスバースト　｜　<strong>MS:</strong> ブリザード / パーマフロスト / ウォータースフィア / 氷結領域
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>フロストファング</strong></td><td class="priority-5">★★★★★</td><td>玄氷効率・特殊攻撃</td><td>メイン連打スキル。玄氷スタックを最速で貯める</td></tr>
+            <tr><td>基本</td><td><strong>メテオストーム</strong></td><td class="priority-5">★★★★★</td><td>主力ラッシュ・範囲ダメージ</td><td>回転率が高く、DPSの核</td></tr>
+            <tr><td>究極</td><td><strong>アイスバースト</strong></td><td class="priority-5">★★★★★</td><td>大ダメージ＋凍結</td><td>バーストタイミングで使用。凍結で敵を足止め</td></tr>
+            <tr><td>MS</td><td>ブリザード</td><td class="priority-4">★★★★・</td><td>範囲玄氷蓄積・持続ダメージ</td><td>雑魚処理・AoEで優秀</td></tr>
+            <tr><td>MS</td><td><strong>パーマフロスト</strong></td><td class="priority-4">★★★★・</td><td>移動速度バフ＋持続ダメージ</td><td>自身と味方の機動力UP。維持推奨</td></tr>
+            <tr><td>MS</td><td>ウォータースフィア</td><td class="priority-3">★★★・・</td><td>玄氷蓄積＋範囲攻撃</td><td>序盤のスタック稼ぎに便利</td></tr>
+            <tr><td>MS</td><td>氷結領域</td><td class="priority-3">★★★・・</td><td>フィールド制御・持続凍結</td><td>ボス戦で敵の動きを制限</td></tr>
+        </tbody>
+    </table>
 
-        <!-- ヘヴィガーディアン -->
-        <section class="section" id="heavy">
-            <h2>🛡️ ヘヴィガーディアン</h2>
-            <!-- ... -->
-        </section>
+    <h3>霜天型（広範囲・詠唱火力特化）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> フローズンストーム / メイルストローム　｜　<strong>究極:</strong> アイスバースト　｜　<strong>MS:</strong> パーマフロスト / タイドプール / ブリザード / 氷河爆砕
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>フローズンストーム</strong></td><td class="priority-5">★★★★★</td><td>詠唱型大範囲ダメージ</td><td>霜天型のメイン火力スキル。詠唱中断に注意</td></tr>
+            <tr><td>基本</td><td><strong>メイルストローム</strong></td><td class="priority-4">★★★★・</td><td>敵集め＋玄氷蓄積</td><td>雑魚をまとめて殲滅。フローズンストームの準備に最適</td></tr>
+            <tr><td>究極</td><td><strong>アイスバースト</strong></td><td class="priority-5">★★★★★</td><td>大ダメージ＋凍結</td><td>型共通。詠唱後バーストに合わせる</td></tr>
+            <tr><td>MS</td><td><strong>パーマフロスト</strong></td><td class="priority-4">★★★★・</td><td>速度バフ＋持続ダメージ</td><td>詠唱中の生存率UP。ほぼ必須</td></tr>
+            <tr><td>MS</td><td>タイドプール</td><td class="priority-3">★★★・・</td><td>持続ダメージ＋連携</td><td>フローズンストームと組み合わせで火力増</td></tr>
+            <tr><td>MS</td><td>ブリザード</td><td class="priority-3">★★★・・</td><td>範囲玄氷蓄積</td><td>AoE補助。雑魚戦で便利</td></tr>
+            <tr><td>MS</td><td><strong>氷河爆砕</strong></td><td class="priority-4">★★★★・</td><td>爆発型フィニッシュダメージ</td><td>玄氷スタック消費で高火力。締めに最適</td></tr>
+        </tbody>
+    </table>
+</section>
 
-        <!-- シールドファイター -->
-        <section class="section" id="shield">
-            <h2>🛡️ シールドファイター</h2>
-            <!-- ... -->
-        </section>
+<!-- ディバインアーチャー -->
+<section class="section" id="divine">
+    <h2>🏹 ディバインアーチャー</h2>
 
-        <!-- ヴァーダントオラクル -->
-        <section class="section" id="verdant">
-            <h2>🌿 ヴァーダントオラクル</h2>
-            <!-- ... -->
-        </section>
+    <h3>狼弓型（召喚・安全型）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> ハウリングボルト / ワイルドコール　｜　<strong>究極:</strong> ウルフストーム　｜　<strong>MS:</strong> レイジショット / メンタルフォーカス / アローレイン / 狼の咆哮
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>ハウリングボルト</strong></td><td class="priority-5">★★★★★</td><td>特殊攻撃・狼召喚</td><td>主力スキル。狼を呼び出し自動攻撃</td></tr>
+            <tr><td>基本</td><td><strong>ワイルドコール</strong></td><td class="priority-5">★★★★★</td><td>狼召喚・自動火力</td><td>安全にダメージを与える主力</td></tr>
+            <tr><td>究極</td><td><strong>ウルフストーム</strong></td><td class="priority-5">★★★★★</td><td>狼群大ダメージ</td><td>バースト時使用。狼の数で火力増</td></tr>
+            <tr><td>MS</td><td>レイジショット</td><td class="priority-4">★★★★・</td><td>高火力単発</td><td>狼召喚後の追撃</td></tr>
+            <tr><td>MS</td><td><strong>メンタルフォーカス</strong></td><td class="priority-4">★★★★・</td><td>バフ・閃心強化</td><td>火力維持に必須</td></tr>
+            <tr><td>MS</td><td>アローレイン</td><td class="priority-3">★★★・・</td><td>範囲攻撃</td><td>雑魚処理</td></tr>
+            <tr><td>MS</td><td>狼の咆哮</td><td class="priority-3">★★★・・</td><td>デバフ・狼強化</td><td>補助</td></tr>
+        </tbody>
+    </table>
 
-        <!-- ビートパフォーマー -->
-        <section class="section" id="beat">
-            <h2>🎶 ビートパフォーマー</h2>
-            <!-- ... -->
-        </section>
+    <h3>鷹弓型（会心・移動特化）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> ストライクボルト / エナジーショット　｜　<strong>究極:</strong> ウルフストーム　｜　<strong>MS:</strong> メンタルフォーカス / ブラストショット / アローレイン / 鷹の眼
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>ストライクボルト</strong></td><td class="priority-5">★★★★★</td><td>特殊攻撃・鷹協力</td><td>主力。鷹が自動追撃</td></tr>
+            <tr><td>基本</td><td><strong>エナジーショット</strong></td><td class="priority-4">★★★★・</td><td>主力連射</td><td>会心率高め</td></tr>
+            <tr><td>究極</td><td><strong>ウルフストーム</strong></td><td class="priority-5">★★★★★</td><td>大ダメージ</td><td>型共通</td></tr>
+            <tr><td>MS</td><td><strong>メンタルフォーカス</strong></td><td class="priority-4">★★★★・</td><td>バフ・会心強化</td><td>維持必須</td></tr>
+            <tr><td>MS</td><td>ブラストショット</td><td class="priority-3">★★★・・</td><td>単発高ダメージ</td><td>フィニッシャー</td></tr>
+            <tr><td>MS</td><td>アローレイン</td><td class="priority-3">★★★・・</td><td>範囲攻撃</td><td>雑魚処理</td></tr>
+            <tr><td>MS</td><td>鷹の眼</td><td class="priority-4">★★★★・</td><td>会心率UP</td><td>火力強化</td></tr>
+        </tbody>
+    </table>
+</section>
 
-        <div style="text-align: center; margin: 40px 0;">
+<!-- ヘヴィガーディアン -->
+<section class="section" id="heavy">
+    <h2>🛡️ ヘヴィガーディアン</h2>
+
+    <h3>剛身型（シールド耐久・近接タンク）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> 砕刃の猛撃 / 憤怒の剛撃　｜　<strong>究極:</strong> 岩堅・崩裂の廻刃　｜　<strong>MS:</strong> 巨岩躯体 / 砕星衝 / 砂塵外套 / 鉄壁
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>砕刃の猛撃</strong></td><td class="priority-5">★★★★★</td><td>特殊攻撃・シールド主力</td><td>タンクの軸スキル</td></tr>
+            <tr><td>基本</td><td><strong>憤怒の剛撃</strong></td><td class="priority-4">★★★★・</td><td>火力＋挑発</td><td>ダメージとヘイト管理</td></tr>
+            <tr><td>究極</td><td><strong>岩堅・崩裂の廻刃</strong></td><td class="priority-5">★★★★★</td><td>究極耐久＋挑発</td><td>耐久バースト</td></tr>
+            <tr><td>MS</td><td>巨岩躯体</td><td class="priority-4">★★★★・</td><td>挑発・耐久UP</td><td>維持必須</td></tr>
+            <tr><td>MS</td><td>砕星衝</td><td class="priority-3">★★★・・</td><td>範囲挑発</td><td>雑魚処理</td></tr>
+            <tr><td>MS</td><td>砂塵外套</td><td class="priority-3">★★★・・</td><td>回避・耐久</td><td>生存率UP</td></tr>
+            <tr><td>MS</td><td>鉄壁</td><td class="priority-4">★★★★・</td><td>ダメージ軽減</td><td>ボス戦必須</td></tr>
+        </tbody>
+    </table>
+
+    <h3>剛守型（レジスト・火力タンク）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> 護刃の衝撃 / 岩塊撃　｜　<strong>究極:</strong> 岩堅・崩裂の廻刃　｜　<strong>MS:</strong> 砂岩握 / 勇壮砦壁 / 砕星衝 / 大地咆哮
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>護刃の衝撃</strong></td><td class="priority-5">★★★★★</td><td>特殊・軽減主力</td><td>タンク軸</td></tr>
+            <tr><td>基本</td><td><strong>岩塊撃</strong></td><td class="priority-4">★★★★・</td><td>火力＋集敵</td><td>ダメージ兼用</td></tr>
+            <tr><td>究極</td><td><strong>岩堅・崩裂の廻刃</strong></td><td class="priority-5">★★★★★</td><td>究極</td><td>耐久バースト</td></tr>
+            <tr><td>MS</td><td>砂岩握</td><td class="priority-4">★★★★・</td><td>集敵・挑発</td><td>維持</td></tr>
+            <tr><td>MS</td><td>勇壮砦壁</td><td class="priority-4">★★★★・</td><td>範囲耐久</td><td>パーティー守り</td></tr>
+            <tr><td>MS</td><td>砕星衝</td><td class="priority-3">★★★・・</td><td>範囲攻撃</td><td>雑魚処理</td></tr>
+            <tr><td>MS</td><td>大地咆哮</td><td class="priority-3">★★★・・</td><td>デバフ</td><td>補助</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- シールドファイター -->
+<section class="section" id="shield">
+    <h2>🛡️ シールドファイター</h2>
+
+    <h3>光砕型（防御回復型）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> ブレイヴバッシュ / ジャッジメント　｜　<strong>究極:</strong> ホーリーガード　｜　<strong>MS:</strong> レコニング / セイクリッドオース / コンクエスト / 光の障壁
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>ブレイヴバッシュ</strong></td><td class="priority-5">★★★★★</td><td>特殊攻撃・回復</td><td>タンク主力</td></tr>
+            <tr><td>基本</td><td><strong>ジャッジメント</strong></td><td class="priority-4">★★★★・</td><td>火力＋回復</td><td>ダメージ兼用</td></tr>
+            <tr><td>究極</td><td><strong>ホーリーガード</strong></td><td class="priority-5">★★★★★</td><td>耐久・回復</td><td>生存軸</td></tr>
+            <tr><td>MS</td><td>レコニング</td><td class="priority-4">★★★★・</td><td>守護・火力</td><td>バランス型</td></tr>
+            <tr><td>MS</td><td>セイクリッドオース</td><td class="priority-3">★★★・・</td><td>持続ダメージ</td><td>追加火力</td></tr>
+            <tr><td>MS</td><td>コンクエスト</td><td class="priority-3">★★★・・</td><td>回復</td><td>補助</td></tr>
+            <tr><td>MS</td><td>光の障壁</td><td class="priority-4">★★★★・</td><td>バリア</td><td>耐久UP</td></tr>
+        </tbody>
+    </table>
+
+    <h3>光盾型（持続安定型）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> グローイングガード / ジャッジメント　｜　<strong>究極:</strong> ホーリーガード　｜　<strong>MS:</strong> セイクリッドオース / コンクエスト / 光の守護 / 反射壁
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>グローイングガード</strong></td><td class="priority-5">★★★★★</td><td>特殊・HP強化</td><td>主力</td></tr>
+            <tr><td>基本</td><td><strong>ジャッジメント</strong></td><td class="priority-4">★★★★・</td><td>火力＋回復</td><td>ダメージ兼用</td></tr>
+            <tr><td>究極</td><td><strong>ホーリーガード</strong></td><td class="priority-5">★★★★★</td><td>耐久</td><td>型共通</td></tr>
+            <tr><td>MS</td><td>セイクリッドオース</td><td class="priority-4">★★★★・</td><td>持続ダメージ</td><td>維持</td></tr>
+            <tr><td>MS</td><td>コンクエスト</td><td class="priority-3">★★★・・</td><td>回復</td><td>補助</td></tr>
+            <tr><td>MS</td><td>光の守護</td><td class="priority-4">★★★★・</td><td>バフ・守護</td><td>パーティー支援</td></tr>
+            <tr><td>MS</td><td>反射壁</td><td class="priority-3">★★★・・</td><td>反射カウンター</td><td>敵攻撃利用</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ヴァーダントオラクル -->
+<section class="section" id="verdant">
+    <h2>🌿 ヴァーダントオラクル</h2>
+
+    <h3>威咲型（回復＋火力混合）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> ワイルドブルーム / ブルームヒール　｜　<strong>究極:</strong> 生命の樹　｜　<strong>MS:</strong> ネイチャーワード / リジェネイトパルス / フェラルシード / 自然の守護
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>ワイルドブルーム</strong></td><td class="priority-5">★★★★★</td><td>特殊・究極回復</td><td>火力＋回復主力</td></tr>
+            <tr><td>基本</td><td><strong>ブルームヒール</strong></td><td class="priority-4">★★★★・</td><td>即時回復</td><td>緊急ヒール</td></tr>
+            <tr><td>究極</td><td><strong>生命の樹</strong></td><td class="priority-5">★★★★★</td><td>全体回復＋バフ</td><td>バーストヒール</td></tr>
+            <tr><td>MS</td><td><strong>ネイチャーワード</strong></td><td class="priority-5">★★★★★</td><td>バリア</td><td>耐久必須</td></tr>
+            <tr><td>MS</td><td>リジェネイトパルス</td><td class="priority-4">★★★★・</td><td>HoT＋解除</td><td>持続回復</td></tr>
+            <tr><td>MS</td><td>フェラルシード</td><td class="priority-3">★★★・・</td><td>エネルギー回復</td><td>補助</td></tr>
+            <tr><td>MS</td><td>自然の守護</td><td class="priority-4">★★★★・</td><td>守護＋回復</td><td>パーティー支援</td></tr>
+        </tbody>
+    </table>
+
+    <h3>森癒型（純ヒール・持続回復特化）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> ブルームヒール / リジェネレーション　｜　<strong>究極:</strong> 生命の樹　｜　<strong>MS:</strong> バイタルブルーム / グローヴウィッシュ / ファストグロウス / 癒しの花
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>ブルームヒール</strong></td><td class="priority-5">★★★★★</td><td>即時回復</td><td>主力ヒール</td></tr>
+            <tr><td>基本</td><td><strong>リジェネレーション</strong></td><td class="priority-5">★★★★★</td><td>持続回復（HoT）</td><td>HoT軸</td></tr>
+            <tr><td>究極</td><td><strong>生命の樹</strong></td><td class="priority-5">★★★★★</td><td>全体回復</td><td>型共通</td></tr>
+            <tr><td>MS</td><td><strong>バイタルブルーム</strong></td><td class="priority-4">★★★★・</td><td>特殊即時回復</td><td>緊急用</td></tr>
+            <tr><td>MS</td><td>グローヴウィッシュ</td><td class="priority-3">★★★・・</td><td>単体回復</td><td>補助</td></tr>
+            <tr><td>MS</td><td>ファストグロウス</td><td class="priority-3">★★★・・</td><td>CD短縮</td><td>回転率UP</td></tr>
+            <tr><td>MS</td><td>癒しの花</td><td class="priority-4">★★★★・</td><td>範囲HoT</td><td>パーティー全体回復</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ビートパフォーマー -->
+<section class="section" id="beat">
+    <h2>🎶 ビートパフォーマー</h2>
+
+    <h3>狂音型（攻撃＋即時回復特化）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> ハードディストーション / フレイムラプソディー　｜　<strong>究極:</strong> ブレイブフェローチェ（響宴・バッドネスステージ）　｜　<strong>MS:</strong> サージクインテット / ハーモニックアンセム / ブレイブメロディー / 狂音の調べ
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>ハードディストーション</strong></td><td class="priority-5">★★★★★</td><td>特殊・即時回復</td><td>狂音型主力</td></tr>
+            <tr><td>基本</td><td><strong>フレイムラプソディー</strong></td><td class="priority-4">★★★★・</td><td>火力＋回復</td><td>ダメージ兼用</td></tr>
+            <tr><td>究極</td><td><strong>ブレイブフェローチェ</strong></td><td class="priority-5">★★★★★</td><td>熱響回収・大回復</td><td>バーストヒール</td></tr>
+            <tr><td>MS</td><td><strong>サージクインテット</strong></td><td class="priority-5">★★★★★</td><td>全体回復</td><td>超重要</td></tr>
+            <tr><td>MS</td><td>ハーモニックアンセム</td><td class="priority-4">★★★★・</td><td>範囲・持続回復</td><td>維持</td></tr>
+            <tr><td>MS</td><td>ブレイブメロディー</td><td class="priority-3">★★★・・</td><td>バフ</td><td>補助</td></tr>
+            <tr><td>MS</td><td>狂音の調べ</td><td class="priority-4">★★★★・</td><td>攻撃ヒール</td><td>火力UP</td></tr>
+        </tbody>
+    </table>
+
+    <h3>響奏型（バフ＋持続回復特化）</h3>
+    <div class="build-summary">
+        <strong>基本:</strong> コーラスヒーリング / サージクインテット　｜　<strong>究極:</strong> アレグロヴィヴァーチェ（響宴・バッドネスステージ）　｜　<strong>MS:</strong> ヒーリングメロディー / アンコール / リズムチェイン / コンチェルト
+    </div>
+    <table>
+        <thead><tr><th>カテゴリ</th><th>スキル名</th><th>優先度</th><th>役割</th><th>Tips</th></tr></thead>
+        <tbody>
+            <tr><td>基本</td><td><strong>コーラスヒーリング</strong></td><td class="priority-5">★★★★★</td><td>特殊・全体回復</td><td>主力</td></tr>
+            <tr><td>基本</td><td><strong>サージクインテット</strong></td><td class="priority-5">★★★★★</td><td>全体回復</td><td>超重要</td></tr>
+            <tr><td>究極</td><td><strong>アレグロヴィヴァーチェ</strong></td><td class="priority-5">★★★★★</td><td>バフ＋回復</td><td>パーティーバフ</td></tr>
+            <tr><td>MS</td><td>ヒーリングメロディー</td><td class="priority-4">★★★★・</td><td>設置回復</td><td>持続</td></tr>
+            <tr><td>MS</td><td>アンコール</td><td class="priority-3">★★★・・</td><td>バフ延長</td><td>補助</td></tr>
+            <tr><td>MS</td><td>リズムチェイン</td><td class="priority-3">★★★・・</td><td>連鎖効果</td><td>回転率UP</td></tr>
+            <tr><td>MS</td><td>コンチェルト</td><td class="priority-4">★★★★・</td><td>大合奏</td><td>バースト</td></tr>
+        </tbody>
+    </table>
+</section>
+<div style="text-align: center; margin: 40px 0;">
             <a href="index.html" class="back-btn">← ホームに戻る</a>
         </div>
 
@@ -319,7 +509,5 @@
             }
         }
     </script>
-</body>
-</html>
 </body>
 </html>
