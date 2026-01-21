@@ -3,73 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>毎日開催イベント - スタレゾ攻略アプリ</title>
+    <title>毎日・週指定イベント カウントダウン - スタレゾ攻略アプリ</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             max-width: 100%;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
             color: #fff;
-            line-height: 1.6;
+            line-height: 1.5;
         }
-        h1, h2 {
+        h1 {
             text-align: center;
             color: #ffd700;
             text-shadow: 0 0 10px #ffd700;
+            font-size: 1.8em;
+            margin-bottom: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
-        .section {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-        }
         .event-card {
-            background: rgba(30,40,80,0.4);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
+            background: rgba(30,40,80,0.5);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
         .event-name {
             font-size: 1.3em;
-            margin-bottom: 8px;
             color: #ffd700;
+            margin-bottom: 6px;
         }
-        .event-times {
-            opacity: 0.8;
+        .event-info {
+            font-size: 0.95em;
+            opacity: 0.85;
             margin-bottom: 10px;
         }
         .countdown {
-            font-size: 1.6em;
+            font-size: 1.5em;
             font-weight: bold;
             text-align: center;
             padding: 12px;
             border-radius: 8px;
-            margin: 10px 0;
             background: rgba(100,255,100,0.15);
             color: #ddffdd;
+            margin: 8px 0;
         }
         .開催中 {
-            background: rgba(255,100,100,0.4);
+            background: rgba(255,80,80,0.4);
             color: #ffdddd;
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 10px rgba(255,100,100,0.5); }
-            50%      { box-shadow: 0 0 20px rgba(255,100,100,0.8); }
+            0%, 100% { box-shadow: 0 0 12px rgba(255,80,80,0.5); }
+            50% { box-shadow: 0 0 24px rgba(255,80,80,0.8); }
         }
         .back-btn {
             display: block;
-            width: 200px;
-            margin: 30px auto;
-            padding: 12px;
+            width: 180px;
+            margin: 30px auto 20px;
+            padding: 14px;
             background: linear-gradient(#00aaff, #0077cc);
             color: white;
             font-weight: bold;
@@ -85,57 +81,67 @@
             margin-top: 20px;
         }
         @media (max-width: 600px) {
+            h1 { font-size: 1.6em; }
+            .event-name { font-size: 1.2em; }
             .countdown { font-size: 1.3em; padding: 10px; }
+            .event-card { padding: 12px; margin: 12px 0; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>毎日開催イベント カウントダウン</h1>
-        <p style="text-align:center; opacity:0.8; margin-bottom:30px;">
-            JST基準 / 次回開催までを表示（開催中は強調）<br>
-            ※時刻は参考値です。ゲーム内で最新を確認してください。
+        <h1>イベントカウントダウン</h1>
+        <p style="text-align:center; opacity:0.8; margin-bottom:25px;">
+            JST基準 / 次回開始までを表示（開催中は強調）<br>
+            ※時刻はゲーム内で最終確認をお願いします
         </p>
 
-        <section class="section">
-            <div class="event-card">
-                <div class="event-name">ムークキャンプの巡回</div>
-                <div class="event-times">毎日：11:45 / 16:45 / 21:45</div>
-                <div id="cd-muuk" class="countdown">計算中...</div>
-            </div>
+        <div class="event-card">
+            <div class="event-name">廃都障害レース</div>
+            <div class="event-info">毎週 月・水・金・日　10:00～11:00 / 13:00～14:00 / 16:00～17:00 / 19:00～20:00 / 22:00～23:00</div>
+            <div id="cd-waste-obstacle" class="countdown">計算中...</div>
+        </div>
 
-            <div class="event-card">
-                <div class="event-name">古代都市ヴィルの巡回</div>
-                <div class="event-times">毎日：09:15 / 14:15 / 19:15</div>
-                <div id="cd-vil" class="countdown">計算中...</div>
-            </div>
+        <div class="event-card">
+            <div class="event-name">ダンス練習生</div>
+            <div class="event-info">毎週 月・水・金・日　12:00～13:00 / 15:00～16:00 / 18:00～19:00 / 21:00～22:00</div>
+            <div id="cd-dance-trainee" class="countdown">計算中...</div>
+        </div>
 
-            <div class="event-card">
-                <div class="event-name">山賊野営地の巡回</div>
-                <div class="event-times">毎日：10:45 / 15:45 / 20:45（参考）</div>
-                <div id="cd-bandit" class="countdown">計算中...</div>
-            </div>
+        <div class="event-card">
+            <div class="event-name">路上ミニシアター</div>
+            <div class="event-info">毎週 火・木・土・日　12:00～13:00 / 15:00～16:00 / 18:00～19:00 / 21:00～22:00</div>
+            <div id="cd-street-theater" class="countdown">計算中...</div>
+        </div>
 
-            <div class="event-card">
-                <div class="event-name">ミニシアター</div>
-                <div class="event-times">毎日：複数回（例: 12:00 / 15:00 / 18:00 / 21:00）</div>
-                <div id="cd-theater" class="countdown">計算中...</div>
-            </div>
+        <div class="event-card">
+            <div class="event-name">マウントレース</div>
+            <div class="event-info">毎週 火・木・土・日　10:00～11:00 / 13:00～14:00 / 16:00～17:00 / 19:00～20:00 / 22:00～23:00</div>
+            <div id="cd-mount-race" class="countdown">計算中...</div>
+        </div>
 
-            <div class="event-card">
-                <div class="event-name">ダンス候補生</div>
-                <div class="event-times">毎日：12:00 / 15:00 / 18:00 / 21:00（参考）</div>
-                <div id="cd-dance" class="countdown">計算中...</div>
-            </div>
+        <div class="event-card">
+            <div class="event-name">ムークキャンプの巡回</div>
+            <div class="event-info">毎日　11:45 / 16:45 / 21:45　（15分間NPC追従）</div>
+            <div id="cd-muuk" class="countdown">計算中...</div>
+        </div>
 
-            <!-- 必要に応じてここに新しいイベントカードを追加 -->
-        </section>
+        <div class="event-card">
+            <div class="event-name">古代都市ヴィルの巡回</div>
+            <div class="event-info">毎日　09:15 / 14:15 / 19:15　（15分間NPC追従）</div>
+            <div id="cd-vil" class="countdown">計算中...</div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-name">山賊キャンプの巡回</div>
+            <div class="event-info">毎日　10:45 / 15:45 / 20:45　（15分間NPC追従）</div>
+            <div id="cd-bandit" class="countdown">計算中...</div>
+        </div>
 
         <a href="index.html" class="back-btn">← ホームに戻る</a>
 
         <p class="note">
-            ※これらのイベントは毎日リセットされるものが多いです。<br>
-            廃都障害レースやマウントレースは週指定の場合もあるので、ゲーム内カレンダーで確認を！
+            ※開催時間は参考値です。ゲーム内のスケジュールやお知らせで最新情報をご確認ください。
         </p>
     </div>
 
@@ -147,9 +153,37 @@
             return new Date(now.getTime() + (offset - now.getTimezoneOffset()) * 60000);
         }
 
-        // 次回の開催時刻を計算（今日または明日）
-        function getNextEventTime(now, timeList) {
-            let nextTime = null;
+        // 指定曜日のみを対象にした次回時刻計算
+        function getNextTimeForDays(now, allowedDays, timeList) {
+            let next = null;
+            let minDiff = Infinity;
+
+            for (let i = 0; i < 14; i++) { // 最大2週間先まで検索
+                const candidateDay = new Date(now);
+                candidateDay.setDate(candidateDay.getDate() + i);
+
+                if (allowedDays.includes(candidateDay.getDay())) {
+                    timeList.forEach(timeStr => {
+                        const [h, m] = timeStr.split(':').map(Number);
+                        const candidate = new Date(candidateDay);
+                        candidate.setHours(h, m, 0, 0);
+
+                        if (candidate > now) {
+                            const diff = candidate - now;
+                            if (diff < minDiff) {
+                                minDiff = diff;
+                                next = candidate;
+                            }
+                        }
+                    });
+                }
+            }
+            return next;
+        }
+
+        // 毎日イベント用（全曜日OK）
+        function getNextDailyTime(now, timeList) {
+            let next = null;
             let minDiff = Infinity;
 
             timeList.forEach(timeStr => {
@@ -164,14 +198,13 @@
                 const diff = candidate - now;
                 if (diff < minDiff) {
                     minDiff = diff;
-                    nextTime = candidate;
+                    next = candidate;
                 }
             });
-
-            return nextTime;
+            return next;
         }
 
-        // 残り時間を文字列化
+        // 残り時間フォーマット
         function formatRemaining(ms) {
             if (ms <= 0) return '開催中！';
             const h = Math.floor(ms / 3600000);
@@ -180,33 +213,54 @@
             return `${h}時間 ${m}分 ${s}秒`;
         }
 
-        function updateDailyCountdowns() {
+        function updateCountdowns() {
             const now = getJSTNow();
 
-            // イベントごとの時刻リスト（ゲーム内で確認して調整してください）
-            const events = [
-                { id: 'cd-muuk',     times: ['11:45', '16:45', '21:45'] },
-                { id: 'cd-vil',      times: ['09:15', '14:15', '19:15'] },
-                { id: 'cd-bandit',   times: ['10:45', '15:45', '20:45'] },
-                { id: 'cd-theater',  times: ['12:00', '15:00', '18:00', '21:00'] },
-                { id: 'cd-dance',    times: ['12:00', '15:00', '18:00', '21:00'] }
-            ];
+            // 週指定イベント（月水金日 = 1,3,5,0）
+            const monWedFriSun = [1, 3, 5, 0];
+            const tueThuSatSun = [2, 4, 6, 0];
 
-            events.forEach(event => {
-                const next = getNextEventTime(now, event.times);
-                const diff = next - now;
-                const elem = document.getElementById(event.id);
-                elem.textContent = formatRemaining(diff);
-                if (diff <= 0) {
-                    elem.classList.add('開催中');
-                } else {
-                    elem.classList.remove('開催中');
-                }
-            });
+            // 廃都障害レース
+            const nextWaste = getNextTimeForDays(now, monWedFriSun, ['10:00','13:00','16:00','19:00','22:00']);
+            document.getElementById('cd-waste-obstacle').textContent = formatRemaining(nextWaste - now);
+            if (nextWaste - now <= 0) document.getElementById('cd-waste-obstacle').classList.add('開催中');
+
+            // ダンス練習生
+            const nextDanceTrainee = getNextTimeForDays(now, monWedFriSun, ['12:00','15:00','18:00','21:00']);
+            document.getElementById('cd-dance-trainee').textContent = formatRemaining(nextDanceTrainee - now);
+            if (nextDanceTrainee - now <= 0) document.getElementById('cd-dance-trainee').classList.add('開催中');
+
+            // 路上ミニシアター
+            const nextStreetTheater = getNextTimeForDays(now, tueThuSatSun, ['12:00','15:00','18:00','21:00']);
+            document.getElementById('cd-street-theater').textContent = formatRemaining(nextStreetTheater - now);
+            if (nextStreetTheater - now <= 0) document.getElementById('cd-street-theater').classList.add('開催中');
+
+            // マウントレース
+            const nextMount = getNextTimeForDays(now, tueThuSatSun, ['10:00','13:00','16:00','19:00','22:00']);
+            document.getElementById('cd-mount-race').textContent = formatRemaining(nextMount - now);
+            if (nextMount - now <= 0) document.getElementById('cd-mount-race').classList.add('開催中');
+
+            // 毎日イベント
+            const dailyTimes = ['11:45', '16:45', '21:45']; // 例: ムーク
+            const nextMuuk = getNextDailyTime(now, dailyTimes);
+            document.getElementById('cd-muuk').textContent = formatRemaining(nextMuuk - now);
+            if (nextMuuk - now <= 0) document.getElementById('cd-muuk').classList.add('開催中');
+
+            // 古代都市ヴィル
+            const vilTimes = ['09:15', '14:15', '19:15'];
+            const nextVil = getNextDailyTime(now, vilTimes);
+            document.getElementById('cd-vil').textContent = formatRemaining(nextVil - now);
+            if (nextVil - now <= 0) document.getElementById('cd-vil').classList.add('開催中');
+
+            // 山賊キャンプ
+            const banditTimes = ['10:45', '15:45', '20:45'];
+            const nextBandit = getNextDailyTime(now, banditTimes);
+            document.getElementById('cd-bandit').textContent = formatRemaining(nextBandit - now);
+            if (nextBandit - now <= 0) document.getElementById('cd-bandit').classList.add('開催中');
         }
 
-        updateDailyCountdowns();
-        setInterval(updateDailyCountdowns, 1000); // 1秒ごとに更新
+        updateCountdowns();
+        setInterval(updateCountdowns, 1000);
     </script>
 </body>
 </html>
