@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スタレゾ攻略アプリ - ブループロトコル：スターレゾナンス</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .countdown {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #00ff88;
+            text-shadow: 0 0 15px #00ff88, 0 0 25px #00ff88;
+            text-align: center;
+            padding: 25px;
+            background: rgba(0,255,136,0.25);
+            border-radius: 12px;
+            margin: 15px 0;
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(0,255,136,0.4); }
+            50% { box-shadow: 0 0 30px rgba(0,255,136,0.7); }
+            100% { box-shadow: 0 0 15px rgba(0,255,136,0.4); }
+        }
+        .countdown開催中 {
+            color: #ffaa00;
+            text-shadow: 0 0 15px #ffaa00, 0 0 25px #ffaa00;
+            animation: pulse 2s infinite;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background: rgba(100,100,255,0.3);
+        }
+        .green { background: rgba(0,200,0,0.3); }
+        .gray { background: rgba(150,150,150,0.3); }
+        .purple { background: rgba(200,0,200,0.3); }
+        .yellow { background: rgba(255,255,0,0.3); color: #000; }
+        .orange { background: rgba(255,165,0,0.3); }
+        .brown { background: rgba(139,69,19,0.3); }
+        .blue { background: rgba(0,0,255,0.3); }
+        .total { background: rgba(255,0,0,0.4); font-weight: bold; text-align: right; }
+        @media (max-width: 600px) {
+            .countdown { font-size: 1.6em; padding: 15px; }
+            table { font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗡️ ブループロトコル：スターレゾナンス<br>スマホ攻略アプリ</h1>
+        <p style="text-align: center; font-size: 1.1em;">ギルドイベントと週間納品をすぐにチェック！<br>ホーム画面に追加しておくと便利です♪</p>
+
+        <section class="section" id="events">
+            <h2>⏰ ギルドイベントカウントダウン</h2>
+            <div id="guild_dance" class="countdown">
+                ギルドダンス (金曜 19:30～19:55) まで: <span id="cd_dance">計算中...</span>
+            </div>
+            <div id="guild_hunt" class="countdown">
+                次回ギルドハント (金土日 10:00～24:00) まで: <span id="cd_hunt">計算中...</span>
+            </div>
+            <p style="text-align: center; font-size: 0.9em; opacity: 0.8;">※JST基準 | 開催中は「開催中」と表示</p>
+        </section>
+
+        <section class="section" id="weekly-delivery">
+            <h2>📦 生産職 週間納品一覧</h2>
+            <p style="text-align: center; font-size: 0.9em; opacity: 0.8;">毎週の納品クエスト参考表（バインド/ホームコイン目安）</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>クラス</th>
+                        <th>納品アイテム名称</th>
+                        <th>納品数量</th>
+                        <th>採取物・材料</th>
+                        <th>加工数量</th>
+                        <th>採取場所</th>
+                        <th>購入金額 (バインド)</th>
+                        <th>ホームコイン</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="green"><td>植生学</td><td>干し草</td><td>80</td><td>葉草類</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="green"><td>植生学</td><td>酸っぱい果実の液体</td><td>80</td><td>野菜果物類</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="green"><td>植生学</td><td>基質土</td><td>80</td><td>キノコ類</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="green"><td>植生学</td><td>樹脂</td><td>80</td><td>細枝等</td><td>-</td><td>産の遺跡 上</td><td>12480</td><td>4160</td></tr>
+
+                    <tr class="gray"><td>鉱物学</td><td>粘土</td><td>80</td><td>鉱物結晶全般</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="gray"><td>鉱物学</td><td>細砂</td><td>80</td><td>鉱物結晶全般</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="gray"><td>鉱物学</td><td>清らかな湧水</td><td>80</td><td>鉱物結晶全般</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="gray"><td>鉱物学</td><td>金属砂</td><td>80</td><td>ブルー鉱等</td><td>-</td><td>巨塔の遺跡 バルー鉱</td><td>12480</td><td>4160</td></tr>
+
+                    <tr class="purple"><td>結晶学</td><td>粘土</td><td>80</td><td>鉱物結晶全般</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="purple"><td>結晶学</td><td>細砂</td><td>80</td><td>鉱物結晶全般</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="purple"><td>結晶学</td><td>清らかな湧水</td><td>80</td><td>鉱物結晶全般</td><td>-</td><td>-</td><td>5280</td><td>1760</td></tr>
+                    <tr class="purple"><td>結晶学</td><td>岩塩</td><td>80</td><td>石灰岩等</td><td>-</td><td>カナミア集落ポータル 南等</td><td>12480</td><td>4160</td></tr>
+
+                    <tr class="yellow"><td>料理</td><td>小麦粉</td><td>45</td><td>小麦</td><td>135</td><td>ミンスター・ホルン 麦畑等</td><td>21060</td><td>7020</td></tr>
+
+                    <tr class="orange"><td>錬金</td><td>謎の石の粉</td><td>40</td><td>謎石の原石</td><td>160</td><td>アンドラの謎の石畑</td><td>10560</td><td>3520</td></tr>
+                    <tr class="orange"><td>錬金</td><td>謎の石の粉</td><td>40</td><td>細枝等</td><td>200</td><td>細枝</td><td>13200</td><td>4400</td></tr>
+
+                    <tr class="orange"><td>鍛造</td><td>鉄のインゴット</td><td>40</td><td>鉄鉱石</td><td>40</td><td>巨塔の遺跡 バルー鉱</td><td>9840</td><td>3280</td></tr>
+                    <tr class="orange"><td>鍛造</td><td>鉄のインゴット</td><td>40</td><td>石炭</td><td>80</td><td>巨塔の遺跡 バルー鉱</td><td>12480</td><td>4160</td></tr>
+
+                    <tr class="teal"><td>工芸</td><td>砂岩の砥石</td><td>40</td><td>石灰岩等</td><td>80</td><td>カナミア集落ポータル 南等</td><td>19680</td><td>6560</td></tr>
+                    <tr class="teal"><td>工芸</td><td>砂岩の砥石</td><td>40</td><td>清らかな水等</td><td>40</td><td>カナミア集落ポータル 南等</td><td>2640</td><td>880</td></tr>
+
+                    <tr class="brown"><td>木工</td><td>松材</td><td>40</td><td>松の原木</td><td>120</td><td>木材ショップ</td><td>20880</td><td>6960</td></tr>
+
+                    <tr class="blue"><td>織物</td><td>改良綿布</td><td>20</td><td>改良織り糸</td><td>200</td><td>亜麻をクラフト</td><td>-</td><td>-</td></tr>
+                    <tr class="blue"><td>織物</td><td>改良綿布</td><td>20</td><td>亜麻</td><td>67</td><td>カナミア周辺の水辺</td><td>16482</td><td>5494</td></tr>
+
+                    <tr class="total"><td colspan="6">合計金額</td><td colspan="2">211782 バインド / 70594 ホームコイン</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size: 0.9em; opacity: 0.8; text-align: center;">※値はユーザー提供画像に基づく目安です。ゲーム内で最新を確認してください。</p>
+        </section>
+    </div>
+
+    <script>
+        function updateCountdowns() {
+            const now = new Date();
+            const jstOffset = 9 * 60 * 60 * 1000; // JST +9h
+            const jstNow = new Date(now.getTime() + jstOffset - (now.getTimezoneOffset() * 60 * 1000));
+
+            // ギルドダンス: 次金曜 19:30
+            let nextDance = new Date(jstNow);
+            const day = jstNow.getDay();
+            const daysToFriday = (5 - day + 7) % 7;
+            if (daysToFriday === 0 && jstNow.getHours() >= 19 && (jstNow.getHours() > 19 || jstNow.getMinutes() >= 55)) {
+                nextDance.setDate(nextDance.getDate() + 7);
+            } else if (daysToFriday === 0 && jstNow.getHours() < 19 || (jstNow.getHours() === 19 && jstNow.getMinutes() < 30)) {
+                // 今日開催前 → そのまま
+            } else {
+                nextDance.setDate(nextDance.getDate() + daysToFriday);
+            }
+            nextDance.setHours(19, 30, 0, 0);
+
+            if (jstNow.getDay() === 5 && jstNow.getHours() >= 19 && jstNow.getHours() < 20 && jstNow.getMinutes() < 55) {
+                document.getElementById('cd_dance').innerHTML = '開催中！';
+                document.getElementById('guild_dance').classList.add('開催中');
+            } else {
+                const diffDance = nextDance - jstNow;
+                if (diffDance > 0) {
+                    const h = Math.floor(diffDance / (1000 * 60 * 60));
+                    const m = Math.floor((diffDance % (1000 * 60 * 60)) / (1000 * 60));
+                    const s = Math.floor((diffDance % (1000 * 60)) / 1000);
+                    document.getElementById('cd_dance').innerHTML = `${h}時間 ${m}分 ${s}秒`;
+                } else {
+                    document.getElementById('cd_dance').innerHTML = '終了間近！';
+                }
+            }
+
+            // ギルドハント: 次回の金・土・日の10:00
+            let nextHunt = new Date(jstNow);
+            const huntDays = [5, 6, 0]; // 金5,土6,日0
+            let daysToNextHunt = 7;
+            for (let d of huntDays) {
+                let tempDays = (d - day + 7) % 7;
+                if (tempDays < daysToNextHunt) daysToNextHunt = tempDays;
+            }
+            nextHunt.setDate(nextHunt.getDate() + daysToNextHunt);
+            nextHunt.setHours(10, 0, 0, 0);
+
+            const isHuntDay = huntDays.includes(day);
+            const isHuntTime = jstNow.getHours() >= 10 && jstNow.getHours() < 24;
+            if (isHuntDay && isHuntTime) {
+                document.getElementById('cd_hunt').innerHTML = '開催中！ (1日2回まで)';
+                document.getElementById('guild_hunt').classList.add('開催中');
+            } else {
+                const diffHunt = nextHunt - jstNow;
+                if (diffHunt > 0) {
+                    const h = Math.floor(diffHunt / (1000 * 60 * 60));
+                    const m = Math.floor((diffHunt % (1000 * 60 * 60)) / (1000 * 60));
+                    const s = Math.floor((diffHunt % (1000 * 60)) / 1000);
+                    document.getElementById('cd_hunt').innerHTML = `${h}時間 ${m}分 ${s}秒`;
+                } else {
+                    document.getElementById('cd_hunt').innerHTML = '本日終了！ 次回へ';
+                }
+            }
+        }
+
+        updateCountdowns();
+        setInterval(updateCountdowns, 1000);
+    </script>
+</body>
+</html>
