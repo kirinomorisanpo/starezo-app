@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ドロップ装備能力一覧 - ブループロトコル：スターレゾナンス</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0a0e1f;
+      color: #e0e0ff;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #ffd700;
+      text-shadow: 0 0 8px #ffaa00;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(20, 30, 60, 0.7);
+      min-width: 600px; /* スマホで横スクロールが出るように */
+    }
+    th, td {
+      border: 1px solid #444466;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    th {
+      background: #1a2a5a;
+      color: #ffd700;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {
+      background: rgba(30, 40, 80, 0.4);
+    }
+    .○ { color: #00ff88; font-weight: bold; }
+    .× { color: #ff6666; font-weight: bold; }
+    .header-orange { background: linear-gradient(#ff8800, #cc5500); color: white; }
+    .header-blue   { background: linear-gradient(#4488ff, #2266cc); color: white; }
+    .header-green  { background: linear-gradient(#44cc88, #229966); color: white; }
+    caption {
+      caption-side: top;
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 12px;
+      color: #ffd700;
+      background: rgba(0,0,0,0.4);
+      border-radius: 8px 8px 0 0;
+    }
+    @media (max-width: 600px) {
+      th, td { padding: 8px; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ドロップ装備能力一覧</h1>
+
+    <!-- 筋力装備 -->
+    <div class="table-wrapper">
+      <table>
+        <caption>筋力装備</caption>
+        <thead>
+          <tr class="header-orange">
+            <th>装備</th>
+            <th>会心</th>
+            <th>ファスト</th>
+            <th>幸運</th>
+            <th>器用さ</th>
+            <th>万能</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ヘルム</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="×">×</td></tr>
+          <tr><td>鎧</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>ガントレット</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>靴</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>耳飾り</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>首飾り</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>腕輪・左</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>腕輪・右</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>指輪</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td></tr>
+          <tr><td>腰帯</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="×">×</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 敏捷装備 -->
+    <div class="table-wrapper">
+      <table>
+        <caption>敏捷装備</caption>
+        <thead>
+          <tr class="header-blue">
+            <th>装備</th>
+            <th>会心</th>
+            <th>ファスト</th>
+            <th>幸運</th>
+            <th>器用さ</th>
+            <th>万能</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ヘルム</td><td class="○">○</td><td class="×">×</td><td class="ファスト">ファスト</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>鎧</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>ガントレット</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>靴</td><td class="×">×</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>耳飾り</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>首飾り</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>腕輪・左</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>腕輪・右</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td></tr>
+          <tr><td>指輪</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td></tr>
+          <tr><td>腰帯</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 知力装備 -->
+    <div class="table-wrapper">
+      <table>
+        <caption>知力装備</caption>
+        <thead>
+          <tr class="header-green">
+            <th>装備</th>
+            <th>会心</th>
+            <th>ファスト</th>
+            <th>幸運</th>
+            <th>器用さ</th>
+            <th>万能</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ヘルム</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>鎧</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td><td class="×">×</td></tr>
+          <tr><td>ガントレット</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td></tr>
+          <tr><td>靴</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>耳飾り</td><td class="○">○</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td></tr>
+          <tr><td>首飾り</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="○">○</td><td class="○">○</td></tr>
+          <tr><td>腕輪・左</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>腕輪・右</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>指輪</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+          <tr><td>腰帯</td><td class="○">○</td><td class="×">×</td><td class="○">○</td><td class="×">×</td><td class="○">○</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>
