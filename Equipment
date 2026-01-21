@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ドロップ装備能力一覧 - ブループロトコル：スターレゾナンス</title>
   <style>
+<p style="text-align: center; margin: 20px 0;">
+  <a href="index.html" style="color: #00ffcc; font-size: 1.1em; text-decoration: underline;">
+    ← ホームに戻る
+  </a>
+</p>
     body {
       font-family: system-ui, -apple-system, sans-serif;
       background: #0a0e1f;
@@ -160,4 +165,9 @@
 
   </div>
 </body>
+<p style="text-align: center; margin: 20px 0;">
+  <a href="index.html" style="color: #00ffcc; font-size: 1.1em; text-decoration: underline;">
+    ← ホームに戻る
+  </a>
+</p>
 </html>
