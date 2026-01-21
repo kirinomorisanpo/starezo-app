@@ -69,27 +69,27 @@
         }
 
         .countdown {
-            font-size: 2.1em;
+            font-size: 1.8em;
             font-weight: bold;
             text-align: center;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 12px;
+            padding: 18px;
+            margin: 12px 0;
+            border-radius: 10px;
             background: rgba(0, 255, 136, 0.15);
             color: #00ff88;
             text-shadow: 0 0 12px #00ff88;
-            animation: pulse 4s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); }
-            50%      { box-shadow: 0 0 30px rgba(0, 255, 136, 0.7); }
         }
 
         .countdown.開催中 {
-            background: rgba(255, 170, 0, 0.25);
-            color: #ffaa00;
-            text-shadow: 0 0 12px #ffaa00;
+            background: rgba(255, 100, 100, 0.35);
+            color: #ffdddd;
+            text-shadow: 0 0 12px #ff6666;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 15px rgba(255,100,100,0.4); }
+            50%      { box-shadow: 0 0 30px rgba(255,100,100,0.7); }
         }
 
         .note {
@@ -100,7 +100,7 @@
         }
 
         @media (max-width: 600px) {
-            .countdown { font-size: 1.6em; padding: 15px; }
+            .countdown { font-size: 1.4em; padding: 14px; }
             .menu-btn { font-size: 1.05em; padding: 14px 20px; }
         }
     </style>
@@ -110,10 +110,11 @@
         <h1>🗡️ ブループロトコル：スターレゾナンス<br>スマホ攻略アプリ</h1>
 
         <p class="intro">
-            ギルドイベントの時間をすぐチェック！<br>
+            ギルドイベント・フィールドボスの時間をすぐチェック！<br>
             ホーム画面に追加して便利に使おう！
         </p>
 
+        <!-- ギルドイベント -->
         <section class="section">
             <h2>⏰ ギルドイベントカウントダウン</h2>
 
@@ -130,18 +131,34 @@
             <p class="note">※JST基準 | 開催中は「開催中」と表示</p>
         </section>
 
+        <!-- フィールドボス -->
+        <section class="section">
+            <h2>フィールドボス出現タイマー</h2>
+            <p class="note">毎時00分 / 30分にリポップ（チャンネル別独立）</p>
+
+            <div id="boss00" class="countdown">
+                次回00分沸きボスまで：<br>
+                <span id="cd-boss00">計算中...</span>
+            </div>
+
+            <div id="boss30" class="countdown">
+                次回30分沸きボスまで：<br>
+                <span id="cd-boss30">計算中...</span>
+            </div>
+
+            <p class="note" style="margin-top: 15px;">
+                ※鍵：毎日ボス用2個・精鋭用2個（最大6個貯め）<br>
+                主なドロップ：金武器素材、金装備素材、奥義ウィル・欠片など
+            </p>
+        </section>
+
+        <!-- 各種情報ページへのメニュー -->
         <section class="section">
             <h2>📌 各種情報ページ</h2>
             <div class="menu">
-                <a href="daily-event.html" class="menu-btn">
-   　　　　　　　　　 毎日開催イベント カウントダウン
-　　　　　　　　　</a>
-                <a href="Weeklydelivery.html" class="menu-btn">
-                    生産職 週間納品一覧
-                </a>
-                <a href="Equipment.html" class="menu-btn">
-                    ドロップ装備能力一覧
-                </a>
+                <a href="weeklydelivery.html" class="menu-btn">生産職 週間納品一覧</a>
+                <a href="Equipment.html" class="menu-btn">ドロップ装備能力一覧</a>
+                <a href="daily-event.html" class="menu-btn">毎日開催イベント カウントダウン</a>
             </div>
         </section>
 
@@ -151,16 +168,28 @@
     </div>
 
     <script>
-        function updateCountdowns() {
+        function getJSTNow() {
             const now = new Date();
-            const jstOffset = 9 * 60 * 60 * 1000;
-            const jstNow = new Date(now.getTime() + jstOffset - (now.getTimezoneOffset() * 60 * 1000));
-            const day = jstNow.getDay();
-            const hours = jstNow.getHours();
-            const minutes = jstNow.getMinutes();
+            const offset = 9 * 60;
+            return new Date(now.getTime() + (offset - now.getTimezoneOffset()) * 60000);
+        }
 
-            // ギルドダンス：毎週金曜 19:30～19:55
-            let nextDance = new Date(jstNow);
+        function formatTimeLeft(ms) {
+            if (ms <= 0) return '出現中！';
+            const h = Math.floor(ms / 3600000);
+            const m = Math.floor((ms % 3600000) / 60000);
+            const s = Math.floor((ms % 60000) / 1000);
+            return `${h}時間 ${m}分 ${s}秒`;
+        }
+
+        function updateCountdowns() {
+            const now = getJSTNow();
+            const day = now.getDay();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+
+            // ギルドダンス
+            let nextDance = new Date(now);
             const daysToFriday = (5 - day + 7) % 7;
             nextDance.setDate(nextDance.getDate() + daysToFriday);
             nextDance.setHours(19, 30, 0, 0);
@@ -169,49 +198,75 @@
                 nextDance.setDate(nextDance.getDate() + 7);
             }
 
+            const diffDance = nextDance - now;
+            const cdDance = document.getElementById('cd_dance');
             if (day === 5 && hours === 19 && minutes >= 30 && minutes < 55) {
-                document.getElementById('cd_dance').textContent = '開催中！';
+                cdDance.textContent = '開催中！';
                 document.getElementById('guild_dance').classList.add('開催中');
+            } else if (diffDance > 0) {
+                const h = Math.floor(diffDance / 3600000);
+                const m = Math.floor((diffDance % 3600000) / 60000);
+                const s = Math.floor((diffDance % 60000) / 1000);
+                cdDance.textContent = `${h}時間 ${m}分 ${s}秒`;
+                document.getElementById('guild_dance').classList.remove('開催中');
             } else {
-                const diff = nextDance - jstNow;
-                if (diff > 0) {
-                    const h = Math.floor(diff / 3600000);
-                    const m = Math.floor((diff % 3600000) / 60000);
-                    const s = Math.floor((diff % 60000) / 1000);
-                    document.getElementById('cd_dance').textContent = `${h}時間 ${m}分 ${s}秒`;
-                } else {
-                    document.getElementById('cd_dance').textContent = '終了間近';
-                }
+                cdDance.textContent = '終了間近';
             }
 
-            // ギルドハント：金土日 10:00～24:00
-            let nextHunt = new Date(jstNow);
+            // ギルドハント
+            let nextHunt = new Date(now);
             const huntDays = [5, 6, 0];
             let minDays = 7;
             huntDays.forEach(d => {
                 let temp = (d - day + 7) % 7;
                 if (temp < minDays) minDays = temp;
             });
-
             nextHunt.setDate(nextHunt.getDate() + minDays);
             nextHunt.setHours(10, 0, 0, 0);
 
             const isHuntDay = huntDays.includes(day);
             const isHuntTime = hours >= 10 && hours < 24;
-
+            const cdHunt = document.getElementById('cd_hunt');
             if (isHuntDay && isHuntTime) {
-                document.getElementById('cd_hunt').textContent = '開催中！ (1日2回まで)';
+                cdHunt.textContent = '開催中！ (1日2回まで)';
                 document.getElementById('guild_hunt').classList.add('開催中');
             } else {
-                const diff = nextHunt - jstNow;
-                if (diff > 0) {
-                    const h = Math.floor(diff / 3600000);
-                    const m = Math.floor((diff % 3600000) / 60000);
-                    const s = Math.floor((diff % 60000) / 1000);
-                    document.getElementById('cd_hunt').textContent = `${h}時間 ${m}分 ${s}秒`;
+                const diffHunt = nextHunt - now;
+                if (diffHunt > 0) {
+                    const h = Math.floor(diffHunt / 3600000);
+                    const m = Math.floor((diffHunt % 3600000) / 60000);
+                    const s = Math.floor((diffHunt % 60000) / 1000);
+                    cdHunt.textContent = `${h}時間 ${m}分 ${s}秒`;
                 } else {
-                    document.getElementById('cd_hunt').textContent = '本日終了';
+                    cdHunt.textContent = '本日終了';
                 }
+                document.getElementById('guild_hunt').classList.remove('開催中');
+            }
+
+            // フィールドボス 00分
+            const nextBoss00 = new Date(now);
+            nextBoss00.setMinutes(0, 0, 0);
+            if (minutes >= 0) nextBoss00.setHours(hours + 1);
+            const diffBoss00 = nextBoss00 - now;
+            const cdBoss00 = document.getElementById('cd-boss00');
+            cdBoss00.textContent = formatTimeLeft(diffBoss00);
+            if (minutes === 0) {
+                document.getElementById('boss00').classList.add('開催中');
+            } else {
+                document.getElementById('boss00').classList.remove('開催中');
+            }
+
+            // フィールドボス 30分
+            const nextBoss30 = new Date(now);
+            nextBoss30.setMinutes(30, 0, 0);
+            if (minutes >= 30) nextBoss30.setHours(hours + 1);
+            const diffBoss30 = nextBoss30 - now;
+            const cdBoss30 = document.getElementById('cd-boss30');
+            cdBoss30.textContent = formatTimeLeft(diffBoss30);
+            if (minutes === 30) {
+                document.getElementById('boss30').classList.add('開催中');
+            } else {
+                document.getElementById('boss30').classList.remove('開催中');
             }
         }
 
@@ -220,5 +275,6 @@
     </script>
 </body>
 </html>
+
 
 
